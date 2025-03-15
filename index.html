@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PH-TUBE</title>
+    <!-- Addig Dasiy UI&Tailwind -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/daisyui@5"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  </head>
+  <body>
+    <header>
+      <nav
+        class="w-11/12 mx-auto flex justify-between items-center py-5 border-b-2 border-[#17171720]"
+      >
+        <div class="logo">
+          <img class="w-[120px]" src="./assets/Logo.png" alt="" />
+        </div>
+        <div class="sorts">
+          <button class="btn">Shorts By View</button>
+        </div>
+        <div class="blogs">
+          <button class="btn bg-[#FF1F3D] text-gray-800">Error</button>
+        </div>
+      </nav>
+    </header>
+    <nav
+      id="catagory-container"
+      class="flex justify-center items-center py-5 gap-5"
+    >
+      <button class="btn bg-[#FF1F3D] text-white">ALL</button>
+    </nav>
+
+    <section
+      class="w-11/12 mx-auto grid grid-cols-4 gap-4"
+      id="video-container"
+    >
+
+    </section>
+
+    <script src="./script/index.js"></script>
+  </body>
+</html>
