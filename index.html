@@ -4,6 +4,11 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>PH-TUBE</title>
+    <style>
+      .active {
+        background-color: #ff1f3d;
+      }
+    </style>
     <!-- Addig Dasiy UI&Tailwind -->
     <link
       href="https://cdn.jsdelivr.net/npm/daisyui@5"
@@ -21,10 +26,28 @@
           <img class="w-[120px]" src="./assets/Logo.png" alt="" />
         </div>
         <div class="sorts">
-          <button class="btn">Shorts By View</button>
+          <label class="input">
+            <svg
+              class="h-[1em] opacity-50"
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 24 24"
+            >
+              <g
+                stroke-linejoin="round"
+                stroke-linecap="round"
+                stroke-width="2.5"
+                fill="none"
+                stroke="currentColor"
+              >
+                <circle cx="11" cy="11" r="8"></circle>
+                <path d="m21 21-4.3-4.3"></path>
+              </g>
+            </svg>
+            <input id="search-input" type="search" required placeholder="Search" />
+          </label>
         </div>
         <div class="blogs">
-          <button class="btn bg-[#FF1F3D] text-gray-800">Error</button>
+          <button class="btn bg-[#FF1F3D] text-gray-800">Shorts By View</button>
         </div>
       </nav>
     </header>
@@ -32,16 +55,40 @@
       id="catagory-container"
       class="flex justify-center items-center py-5 gap-5"
     >
-      <button class="btn bg-[#FF1F3D] text-white">ALL</button>
+      <button id="all-btn" onclick="loadVideos();" class="btn btn-sm p-5">
+        ALL
+      </button>
     </nav>
 
     <section
       class="w-11/12 mx-auto grid grid-cols-4 gap-4"
       id="video-container"
     >
-
+      <div
+        class="my-55 items-center col-span-full flex flex-col text-center gap-10"
+      >
+        <img class="w-[250px]" src="./assets/Icon.png" alt="" />
+        <h1 class="text-2xl font-bold">
+          Oops!! Sorry, There is no<br />
+          content here
+        </h1>
+      </div>
     </section>
 
-    <script src="./script/index.js"></script>
+    <!-- Open the modal using ID.showModal() method -->
+    <!-- <button class="btn" onclick="video_details.showModal()">open modal</button> -->
+    <dialog id="video_details" class="modal modal-bottom sm:modal-middle">
+      <div class="modal-box">
+        <div id="details-container"></div>
+        <div class="modal-action">
+          <form method="dialog">
+            <!-- if there is a button in form, it will close the modal -->
+            <button class="btn">Close</button>
+          </form>
+        </div>
+      </div>
+    </dialog>
+
+    <script src="./script/index.js" defer></script>
   </body>
 </html>
